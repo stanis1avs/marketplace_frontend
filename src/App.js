@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Routes, Route } from "react-router-dom";
+import {HashRouter, Routes, Route } from "react-router-dom";
 import MainPage from './pages/MainPage'
 import ContactsPage from './pages/ContactsPage'
 import CatalogIdPage from './pages/CatalogIdPage'
@@ -10,7 +10,7 @@ import CatalogPage from './pages/CatalogPage'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<MainPage />}/>
         <Route path="/contacts" element={<ContactsPage />}/>
@@ -20,7 +20,7 @@ function App() {
         <Route path="/cart" element={<CartPage />}/>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
