@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom"
 import { cartDelete } from "../Reducers/ReducerCart";
 
 export default function CartItems() {
@@ -10,7 +11,7 @@ export default function CartItems() {
   }
   return (
     <>
-      {items && 
+      {items &&
         <>
           <section className="cart">
             <h2 className="text-center">Корзина</h2>
@@ -27,10 +28,10 @@ export default function CartItems() {
                 </tr>
               </thead>
               <tbody>
-                {items.map((item, index) => 
+                {items.map((item, index) =>
                   <tr key={item.id}>
                     <td scope="row">{index+1}</td>
-                    <td><a href={`/catalog/${item.id}`}>{item.title}</a></td>
+                    <td><Link to={`/catalog/${item.id}`}>{item.title}</Link></td>
                     <td>{item.size}</td>
                     <td>{item.count}</td>
                     <td>{item.price}</td>

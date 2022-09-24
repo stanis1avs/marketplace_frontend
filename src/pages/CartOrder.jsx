@@ -19,9 +19,10 @@ export default function CartOrder() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postItem({ phone: form.phone, address: form.address, items }))
-    setForm(START_STATE);
-    setTimeout(() => dispatch(cartReset()), 3 * 1000)
+    dispatch(postItem({ phone: form.phone, address: form.address, items })).then(()=>{
+      setForm(START_STATE);
+      setTimeout(() => dispatch(cartReset()), 3 * 1000)
+    })
   }
 
   return (

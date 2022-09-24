@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Product({product}) {
   return (
     <>
@@ -5,7 +7,7 @@ export default function Product({product}) {
       <div className="card-body">
         <p className="card-text">{product.title}</p>
         <p className="card-text">{`${product.price} руб.`}</p>
-        <a href={`/catalog/${product.id}`} className="btn btn-outline-primary">Заказать</a>
+        <Link to={`/catalog/${product.id}`} className="btn btn-outline-primary">Заказать </Link>
       </div>
     </>
   )
