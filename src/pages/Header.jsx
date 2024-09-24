@@ -1,10 +1,14 @@
-import Cart from "./Header/Cart"
+import { useRef } from 'react';
+import CartIcon from "./Header/CartIcon"
 import Logo from "./Header/Logo"
 import Navigation from "./Header/Navigation"
 import SearchButton from "./Header/SearchButton"
 import SearchForm from "./Header/SearchForm"
 
 export default function Header() {
+  const searchFormRef = useRef(null);
+  const inputRef = useRef(null);
+
 	return (
 		<header className="container">
 			<div className="row">
@@ -15,15 +19,15 @@ export default function Header() {
 			      	<Navigation/>
 	          	<div>
 	          		<div className="header-controls-pics">
-	                <SearchButton />
-	                <Cart/>
+	                <SearchButton searchFormRef={searchFormRef} inputRef={inputRef} />
+	                <CartIcon/>
 	              </div>
-	               <SearchForm />
+	               <SearchForm formRef={searchFormRef} inputRef={inputRef} />
 	            </div>
-	          </div>					
+	          </div>
 					</nav>
 				</div>
 			</div>
-		</header>	
+		</header>
 	)
 }

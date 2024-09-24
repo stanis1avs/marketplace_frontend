@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   items: [],
   total: 0,
+  loading: false,
   status: null
 };
 
@@ -20,14 +21,16 @@ export const ReducerCart = createSlice({
         total
       }
     },
-    cartReset(state, action) {
-      return initialState;
+    cartReset() {
+      return initialState
     },
     cartDelete(state, action) {
       const items = [...state.items]
       items.splice(action.payload, 1);
       return {
         ...state,
+        status: null,
+        total: 0,
         items
       }
     },
@@ -35,21 +38,24 @@ export const ReducerCart = createSlice({
       const status = 'Оформляем покупку, пожалуйста подождите'
       return {
         ...state,
-        status
+        status,
+        loading: true
       }
     },
     sendItemsSuccess(state) {
       const status = 'Заказ успешно оформлен, спасибо за покупку!'
       return {
         ...state,
-        status
+        status,
+        loading: false
       }
     },
     sendItemsFailure(state) {
       const status = 'Что-то пошло не так, пожалуйста попробуйте позже!'
       return {
         ...state,
-        status
+        status,
+        loading: false,
       }
     }
 }})

@@ -24,7 +24,7 @@ export const ReducerCatalogId = createSlice({
       return {
         ...state,
         item,
-        countSizes: item.sizes.filter((e) => e.avalible === true).length,
+        countSizes: item.sizes.filter((e) => e.available === true).length,
         loading: false,
         error: null,
       };

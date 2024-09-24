@@ -4,7 +4,7 @@ const initialState = {
   items: [],
   loading: false,
   error: null,
-  categoryId: null,
+  categoryId: 0,
   offset: 6
 };
 

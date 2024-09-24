@@ -1,6 +1,4 @@
-import React from 'react'
-
-function Loader() {
+export default function Loader() {
   return (
     <div className="preloader">
     <span></span>
@@ -10,5 +8,3 @@ function Loader() {
   </div>
   )
 }
-
-export default Loader

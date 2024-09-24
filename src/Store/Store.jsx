@@ -1,19 +1,21 @@
 import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from "redux-thunk";
-import ReducerCategoryItems from '../Reducers/ReducerCategoryItems';
 import ReducerTopSales from '../Reducers/ReducerTopSales';
 import ReducerCatalog from '../Reducers/ReducerCatalog';
 import ReducerCatalogId from '../Reducers/ReducerCatalogId';
 import ReducerCatalogSearch from '../Reducers/ReducerCatalogSearch';
 import ReducerCart from '../Reducers/ReducerCart';
-import {
-  saveToLocalStorage,
-  loadFromLocalStorage,
-} from "./localStorage";
+import storage from 'redux-persist/lib/storage';
+import { persistReducer, persistStore } from 'redux-persist';
+
+const persistConfig = {
+  key: 'cart',
+  storage,
+  whitelist: ['ReducerCart'],
+};
 
 const reducer = combineReducers({
-  ReducerCategoryItems,
   ReducerTopSales,
   ReducerCatalog,
   ReducerCatalogSearch,
@@ -21,14 +23,13 @@ const reducer = combineReducers({
   ReducerCart
 });
 
+const persistedReducer = persistReducer(persistConfig, reducer);
+
 const store = configureStore({
-  reducer: reducer,
-  preloadedState: { ReducerCart: loadFromLocalStorage("ReducerCart") },
+  reducer: persistedReducer,
   middleware: [thunk]
 })
 
-store.subscribe(() => {
-  saveToLocalStorage("ReducerCart", store.getState().ReducerCart);
-});
+export const persistor = persistStore(store);
 
 export default store;

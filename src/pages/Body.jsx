@@ -1,4 +1,5 @@
-import banner from '../img/banner.jpg'
+import banner from '../../public/img/banner.jpg'
+import Image from 'next/image';
 
 export default function Body(props) {
   return (
@@ -6,7 +7,7 @@ export default function Body(props) {
       <div className="row">
           <div className="col">
             <div className="banner">
-              <img src={banner} className="img-fluid" alt="К весне готовы!"/>
+              <Image src={banner} className="img-fluid" alt="К весне готовы!"/>
               <h2 className="banner-header">К весне готовы!</h2>
             </div>
             {props.children}
