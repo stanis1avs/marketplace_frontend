@@ -1,8 +1,16 @@
-# marketplace
+# marketplace_frontend
+
+[English version](https://github.com/stanis1avs/marketplace_frontend/blob/main/README-en.md) 
+
+Реализован интернет магазин одежды. В качестве основы было взято [дипломное задание от Нетологии](https://github.com/netology-code/ra16-diploma). 
+
+[backend](https://github.com/stanis1avs/marketplace_backend) 
 
 
-Миграция приложения с React на Next 
+[Функционал работы приложения](https://github.com/stanis1avs/marketplace_frontend/blob/main/FUNCTIONAL.md)
+[UML диаграммы](https://github.com/stanis1avs/marketplace_frontend/blob/main/UML.md)
 
+Новые фичи приложения [тут](https://github.com/users/stanis1avs/projects/2)
 
 ## Технологии frontend
 
@@ -11,29 +19,21 @@
 3. Redux Toolkit
 4. Redux Thunk
 5. localstorage
+6. _React Native (в разработке)_
+7. _PWA (в разработке)_
+8. _Redux Persist (в разработке)_
 
 ## Технологии backend
 
 1. Koa
 2. PostgreSQL
+3. _Python (в разработке)_
+4. _FAST API (в разработке)_
+5. _Kafka (в разработке)_
+6. _TensorFlow Recommenders (в разработке)_
+7. _Elasticsearch (в разработке)_
+8. _My Solve Ridge Regression Task (в разработке)_
 
-Приложение содержит следующие страницы:
-
-1. Главная
-2. Каталог товаров
-3. Информационные
-4. Страница товара
-5. Корзина
-6. 404
-
-## Основные функции приложения:
-
-1. Фиксированное количество отображения товаров каталога
-2. Категоризация товаров каталога
-3. Подгрузка следующих товаров каталога (в том числе внутри конкретной категории)
-4. Поиск товара в каталоге
-5. Добавление и сохранение товара в корзине
-6. Оформление заказа и его отправка 
 
 
 ## Варианты запуска приложения:
