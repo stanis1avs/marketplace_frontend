@@ -2,24 +2,28 @@
   "name": "marketplace",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=10.0.0"
+  },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.5",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@reduxjs/toolkit": "^2.0.1",
+    "@testing-library/jest-dom": "^6.1.6",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.1",
     "dotenv": "^16.4.5",
     "koa": "^2.15.3",
     "koa-body": "^4.1.0",
     "koa-router": "^12.0.1",
     "koa2-cors": "^2.0.6",
-    "next": "^14.0.4",
+    "next": "^14.1.0",
     "pg": "^8.13.0",
     "react": "^18.2.0",
-    "react-redux": "^8.0.2",
+    "react-redux": "^9.0.4",
     "react-spinner-animated": "^3.1.1",
-    "redux": "^4.2.0",
+    "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^3.1.0"
   },
   "scripts": {
     "dev": "concurrently \"npm run start:backend\" \"npm run dev:frontend\"",
@@ -28,8 +32,8 @@
     "start:full": "concurrently \"npm run start:backend\" \"npm start\"",
     "start": "next start",
     "build": "next build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "next build && next export",
+    "deploy": "gh-pages -d out"
   },
   "homepage": "https://stanis1avs.github.io/marketplace/",
   "browserslist": {
@@ -46,7 +50,7 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
-    "gh-pages": "^4.0.0",
+    "gh-pages": "^6.1.1",
     "nodemon": "^3.1.7"
   }
 }

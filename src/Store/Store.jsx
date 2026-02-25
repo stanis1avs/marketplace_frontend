@@ -1,6 +1,5 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
-import thunk from "redux-thunk";
 import ReducerTopSales from '../Reducers/ReducerTopSales';
 import ReducerCatalog from '../Reducers/ReducerCatalog';
 import ReducerCatalogId from '../Reducers/ReducerCatalogId';
@@ -27,7 +26,9 @@ const persistedReducer = persistReducer(persistConfig, reducer);
 
 const store = configureStore({
   reducer: persistedReducer,
-  middleware: [thunk]
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: false
+  })
 })
 
 export const persistor = persistStore(store);
