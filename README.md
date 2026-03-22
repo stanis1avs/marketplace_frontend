@@ -1,45 +1,47 @@
-# marketplace_frontend
-
-[English version](https://github.com/stanis1avs/marketplace_frontend/blob/main/README-en.md) 
-
-Реализован интернет магазин одежды. В качестве основы было взято [дипломное задание от Нетологии](https://github.com/netology-code/ra16-diploma). 
-
-[backend](https://github.com/stanis1avs/marketplace_backend) 
-
-
-[Функционал работы приложения](https://github.com/stanis1avs/marketplace_frontend/blob/main/FUNCTIONAL.md)
-[UML диаграммы](https://github.com/stanis1avs/marketplace_frontend/blob/main/UML.md)
+# Marketplace Frontend
 
 Новые фичи приложения [тут](https://github.com/users/stanis1avs/projects/2)
 
-## Технологии frontend
+[backend](https://github.com/stanis1avs/react_backend__marketplace) 
+[Функционал работы приложения](https://github.com/stanis1avs/react_backend__marketplace/blob/main/FUNCTIONAL.md)
 
-1. React
-2. Next.js
-3. Redux Toolkit
-4. Redux Thunk
-5. localstorage
-6. _React Native (в разработке)_
-7. _PWA (в разработке)_
-8. _Redux Persist (в разработке)_
+## О проекте
 
-## Технологии backend
+**Marketplace** - это система для агрегации и анализа данных с маркетплейсов с умными рекомендациями.
 
-1. Koa
-2. PostgreSQL
-3. _Python (в разработке)_
-4. _FAST API (в разработке)_
-5. _Kafka (в разработке)_
-6. _TensorFlow Recommenders (в разработке)_
-7. _Elasticsearch (в разработке)_
-8. _My Solve Ridge Regression Task (в разработке)_
+### Основная функциональность:
+- Агрегация товаров с различных маркетплейсов
+- Парсинг цен и характеристик товаров
+- **Умные рекомендации** на основе предпочтений пользователя (в разработке)
+- Динамическое изменение цены
+- Категоризация товаров
+- Поиск и фильтрация
 
+---
 
+## Технический стэк
 
-## Варианты запуска приложения:
-1. [vercel](https://bosanoga-marketplace.vercel.app/)
-2. При наличии NodeJS
-- ```git clone https://github.com/stanis1avs/marketplace_frontend.git```
-- ```cd marketplace_frontend && npm install && npm run build && npm run start:full```
-- либо ```cd marketplace_frontend && npm install && npm run dev```
-- Откройте в браузере ```http://localhost:3000```
+### Backend
+1. **Django** 
+2. **PostgreSQL** 
+3. **Celery** - асинхронные задачи
+4. **Redis** - кэширование и брокер сообщений
+5. **Admitad API** - агрегация данных с маркетплейсов
+
+### В разработке
+- **TensorFlow Recommenders** - система рекомендаций
+- **Elasticsearch** 
+- **My Solve Ridge Regression Task** - для динамического изменения цены
+
+### Frontend
+1. **Next.js**
+2. **Redux Toolkit**
+3. **Redux Thunk**
+4. **localStorage**
+
+### В разработке
+- **React Native**
+- **PWA**
+- **Redux Persist**
+
+---
